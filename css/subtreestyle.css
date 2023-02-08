@@ -1,0 +1,38 @@
+
+.signup-panel-form-req,
+.signup-panel-pass-error {
+    color: red;
+}
+
+.signup-panel-input-form-box input::-webkit-outer-spin-button,
+.signup-panel-input-form-box input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+/* Firefox */
+.signup-panel-input-form-box input[type=number] {
+    -moz-appearance: textfield;
+    appearance: none;
+}
+
+.signup-panel-form-other {
+    display: none;
+    margin-top: 0px; 
+    transform: scaleY(0);
+    transition: transform 2s ease-in-out forwards;
+}
+
+.signup-panel-form-other.active {
+    display: block;
+    margin-top: 10px;
+    transform: scaleY(1);
+    transition: transform 2s ease-in-out forwards;
+}
+
+.signup-panel-form-submit-error {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+}
