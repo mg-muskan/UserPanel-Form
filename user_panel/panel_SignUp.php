@@ -88,7 +88,7 @@ include "include/userpanel-header.php";
 
                         <div class="signup-panel-input-form-box form-group">
                             <label for="branch">Branch<span class="signup-panel-form-req">*</span> :</label>
-                            <select class="form-control" id="branch" required
+                            <select class="form-control signup-panel-form-branch" id="branch" required
                                 oninvalid="this.setCustomValidity('Please select your Branch')" 
                                 oninput="this.setCustomValidity('');">
                                 <option value="" selected disabled>Select Branch</option>
@@ -96,7 +96,9 @@ include "include/userpanel-header.php";
                                 <option value="">3</option>
                                 <option value="">4</option>
                                 <option value="">5</option>
+                                <option value="branch-other">Other</option>
                             </select>
+                            <input type="text" class="signup-panel-form-other form-control" id="branchName" placeholder="Enter your Branch">
                         </div>
 
                         <div class="signup-panel-input-form-box form-group">
@@ -183,6 +185,16 @@ include "include/userpanel-header.php";
         }
         else {
             courseName.classList.remove("active");
+        }
+    });
+    
+    $(".signup-panel-form-branch").on('change', function() {
+        const branchName = document.getElementById("branchName");
+        if(this.value == "branch-other") {
+            branchName.classList.add("active");
+        }
+        else {
+            branchName.classList.remove("active");
         }
     });
 
